@@ -23,8 +23,8 @@ test('no text when `success` prop is false', () => {
   expect(congratsDisplay.text()).toBe('');
 });
 
-// test('renders non-empty congrats message when props is true', () => {
-//   const wrapper = setup({ success: true });
-//   const congratsDisplay = findByTestAttr(wrapper, 'component-display');
-//   expect(congratsDisplay.text()).toContain('Congratulations!')
-// });
+test('renders non-empty congrats message when props is true', () => {
+  const wrapper = setup({ success: true });
+  const congratsDisplay = findByTestAttr(wrapper, 'component-display');
+  expect(congratsDisplay.text()).toContain('Congratulations!')
+});
