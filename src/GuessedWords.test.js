@@ -34,3 +34,22 @@ describe('if there are no words guessed', () => {
     expect(instructions.text()).toContain('Please guess a word!')
   });
 });
+
+describe('if there are guessed words', () => {
+
+  let wrapper;
+  let guessedWords = [
+    { guessedWord: 'train', letterMatchCount: 3 },
+    { guessedWord: 'agile', letterMatchCount: 1 },
+    { guessedWord: 'party', letterMatchCount: 5 }
+  ];
+
+  beforeEach(() => {
+    wrapper = setup({ guessedWords });
+  });
+
+  test('renders without error', () => {
+    const component = findByTestAttr(wrapper, 'component-guessed-words');
+    expect(component.length).toBe(1);
+  });
+});
