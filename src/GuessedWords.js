@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 const GuessedWords = (props) => {
   return (
     <div data-test='component-guessed-words'>
+      <h1 data-test='guess-intructions'>
+        Please guess a word!
+      </h1>
     </div>
   )
 };
