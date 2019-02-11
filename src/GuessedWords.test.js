@@ -15,3 +15,11 @@ const setup = (props={}) => {
 test('does not throw error with expected props', () => {
   checkProps(GuessedWords, defaultProps)
 });
+
+describe('if there are no words guessed', () => {
+  test('renders without errors', () => {
+    const wrapper = setup({ guessedWords: [] });
+    const component = findByTestAttr(wrapper, 'component-guessed-words');
+    expect(component.length).toBe(1);
+  });
+});
