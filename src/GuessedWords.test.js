@@ -52,4 +52,9 @@ describe('if there are guessed words', () => {
     const component = findByTestAttr(wrapper, 'component-guessed-words');
     expect(component.length).toBe(1);
   });
+
+  test('renders the guessed words setion', () => {
+    const guessedWordsComp = findByTestAttr(wrapper, 'guessed-words');
+    expect(guessedWordsComp.length).toBe(1);
+  });
 });
