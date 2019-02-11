@@ -11,8 +11,14 @@ const GuessedWords = (props) => {
       </span>
     )
   } else {
+    let words = props.guessedWords.map((word, index) => {
+      return <li data-test='guessed-word' key={index}>Word: {word.guessedWord} Letter Match Count: {word.letterMatchCount}</li>
+    });
     contents = (
       <div data-test='guessed-words'>
+        <ul>
+          {words}
+        </ul>
       </div>
     )
   }
