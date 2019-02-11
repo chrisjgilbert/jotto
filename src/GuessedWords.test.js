@@ -3,11 +3,15 @@ import { shallow } from 'enzyme';
 import { findByTestAttr, checkProps } from '../test/testUtils'
 import GuessedWords from './GuessedWords'
 
-const defaultProps = [{
-  GuessedWords: [{ guessedWord: 'train', letterMatchCount: 3 }]
-}];
+const defaultProps = {
+  guessedWords: [{ guessedWord: 'train', letterMatchCount: 3 }]
+};
 
 const setup = (props={}) => {
   const setupProps = { ...defaultProps, ...props }
   return shallow(<GuessedWords { ...setupProps } />);
 }
+
+test('does not throw error with expected props', () => {
+  checkProps(GuessedWords, defaultProps)
+});
